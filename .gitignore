@@ -15,3 +15,5 @@ api.md
 .playwright-mcp
 *.log
 .DS_Store
+
+.vercel

@@ -143,7 +143,7 @@ ${req.inputType === 'topic' ? `주제: ${req.content}` : req.content}
 
 export async function createQuizSet(
   data: Omit<QuizSet, 'id' | 'createdAt' | 'accessCode' | 'shareUrl'>,
-  questions: Omit<Question, 'id'>[]
+  questions: Omit<Question, 'id' | 'createdAt'>[]
 ): Promise<{ setId: string; accessCode: string }> {
   const accessCode = generateAccessCode();
   const setRef = await addDoc(collection(db, 'quizSets'), {

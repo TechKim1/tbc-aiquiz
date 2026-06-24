@@ -63,7 +63,6 @@ export default function AdminCreateQuizPage() {
           startDate: null,
           endDate: null,
           settings,
-          shareUrl: '',
         },
         questions
       );

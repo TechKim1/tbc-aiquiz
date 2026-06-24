@@ -16,6 +16,8 @@ export default function NicknamePage() {
     return null;
   }
 
+  const set = currentSet;
+
   async function handleStart() {
     const trimmed = nickname.trim();
     if (trimmed.length < 2) { setError('닉네임은 최소 2자 이상이어야 합니다.'); return; }
@@ -23,7 +25,7 @@ export default function NicknamePage() {
     setError('');
     setLoading(true);
     try {
-      const questions = await getQuestions(currentSet.id);
+      const questions = await getQuestions(set.id);
       if (questions.length === 0) {
         setError('이 퀴즈에 문제가 없습니다. 관리자에게 문의하세요.');
         setLoading(false);
